@@ -16,9 +16,11 @@ function pegadados() {
     if (mac.length != 12) {
         console.log("erro de tamanho");
         window.open("error.html");
+        return -1;
     } else if (!mac.match(/([A-F0-9]{12})/)) {
         console.log("erro de simbolo");
         window.open("error.html");
+        return -1;
     };
 
     if (modo === "all_logs") {
@@ -32,6 +34,7 @@ function pegadados() {
     } else {
         console.log("erro de seleção");
         window.open("error.html");
+        return -1;
     };
     endereco = modo + mac;
     window.open(endereco);
