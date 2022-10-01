@@ -11,13 +11,13 @@ function pegadados() {
     var mac = formDados.get('mac_address');
 
     if (modo === "all_logs") {
-        modo = "https://clodu9.greenant.com.br/log/";
+        modo = "https://cloud9.greenant.com.br/log/";
     } else if (modo === "all_meter") {
-        modo = "https://clodu9.greenant.com.br/meter/";
+        modo = "https://cloud9.greenant.com.br/meter/";
     } else if (modo === "last_logs") {
-        modo = "https://clodu9.greenant.com.br/api/last/logs/";
+        modo = "https://cloud9.greenant.com.br/api/last/logs/";
     } else if (modo === "last_meter") {
-        modo = "https://clodu9.greenant.com.br/api/last/measurements/";
+        modo = "https://cloud9.greenant.com.br/api/last/measurements/";
     } else {
         // error handling
     };
