@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +10,7 @@
   <body>
     <script src="script.js"></script>
     <p>Selecione a opção do Cloud9 que deseja utilizar e insira o MAC.</p>
-	
-    <!--
-        cloud9.greenant.com.br/log/MAC
-        cloud9.greenant.com.br/meter/MAC        
-        cloud9.greenant.com.br/api/last/logs/MAC
-        cloud9.greenant.com.br/api/last/measurements/MAC    
-    -->
+
     <form>
         <input type="radio" id="all_logs" name="selector" value="all_logs">
         <label for="all_logs">/log/</label><br>
@@ -31,7 +25,7 @@
         <label for="last_meter">/last/meansuraments/</label><br><br>
         
         <label for="mac_address">MAC address: </label>
-        <input type="text" id="mac_address" name="mac_address" value="AABBCCDDEEFF"><br><br>
+        <input type="text" id="mac_address" name="mac_address" placeholder="AABBCCDDEEFF" pattern="[A-F0-9]{12}"><br><br>
 
         <input type="button" value="Enviar!" onclick="pegadados()">
     </form>
