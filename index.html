@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cloud9 Selector</title>
+    <title>Canivete Suiço do Estagiário</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
   </head>
   <body>
-    <script src="script.js"></script>
+    <h1>Canivete Suiço do Estagiário</h1>
+    
+    <h2>Seletor Cloud9</h2>
     <p>Selecione a opção do Cloud9 que deseja utilizar e insira o MAC.</p>
 
     <form>
@@ -24,10 +27,22 @@
         <input type="radio" id="last_meter" name="selector" value="last_meter">
         <label for="last_meter">/last/meansuraments/</label><br><br>
         
-        <label for="mac_address">MAC address: </label>
+        <label for="mac_address"><strong>MAC address:</strong></label>
         <input type="text" id="mac_address" name="mac_address" placeholder="AABBCCDDEEFF" pattern="[A-F0-9]{12}"><br><br>
 
         <input type="button" value="Enviar!" onclick="pegadados()">
     </form>
+    
+    <hr>
+
+    <h2>Conversor Park Management</h2>
+    <p>Converte o endereço MAC de caixa alta para caixa baixa, padrão do Park Management</p>
+    
+    <input type="text" id="mac_caixa_alta" name="mac_caixa_alta" placeholder="AABBCCDDEEFF" pattern="[A-F0-9]{12}"><br><br>
+
+    <strong>MAC em caixa baixa:</strong>
+    <span id="caixa_baixa"></span>
+    
+    <p><input type="button" value="Converter!" onclick="caixaBaixa()"></p>
   </body>
 </html>
