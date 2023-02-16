@@ -1,4 +1,4 @@
-# **CANIVETE SUÍCO DO ESTAGIÁRIO v0.2**
+# **GA Toolbox v0.2**
 
 ## **OBJETIVO**
 
@@ -8,6 +8,10 @@ Este pequeno código tem a finalidade de facilitar o dia-a-dia dos estagiários 
 - Conversor de caixa alta para caixa baixa dos MACs, útil para inserção de dados na ferramente do Park Management que aceita apenas valores de MAC em caixa baixa.
 
 ---
+
+## **ATUALIZAÇÕES v0.21**
+
+- Projeto renomeado para GA Toolbox.
 
 ## **ATUALIZAÇÕES v0.2**
 
