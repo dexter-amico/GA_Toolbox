@@ -1,4 +1,4 @@
-# **GA Toolbox v0.22**
+# **GA Toolbox v0.31**
 
 ## **OBJETIVO**
 
