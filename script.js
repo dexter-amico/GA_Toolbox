@@ -53,7 +53,7 @@ function pegadados() {
 
     for (const item of listaDeMacs) {
         //verifica se o MAC é válido
-        var macValido = validaMac(mac);
+        var macValido = validaMac(item);
         if (!macValido) { return };
 
         // Retornando a URL do Cloud9
