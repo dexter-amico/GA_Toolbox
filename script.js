@@ -1,11 +1,11 @@
 /*
-https://cloud9.greenant.com.br/log/MAC
-https://cloud9.greenant.com.br/meter/MAC
-https://cloud9.greenant.com.br/api/last/logs/MAC
-https://cloud9.greenant.com.br/api/last/measurements/MAC 
+https://classic-receiver.greenant.com.br/log/MAC
+https://classic-receiver.greenant.com.br/meter/MAC
+https://classic-receiver.greenant.com.br/api/last/logs/MAC
+https://classic-receiver.greenant.com.br/api/last/measurements/MAC 
 */
 
-const urlBase = "https://cloud9.greenant.com.br"
+const urlBase = "https://classic-receiver.greenant.com.br"
 
 function validaMac(mac) {
     //Valida o endereço MAC
@@ -24,7 +24,7 @@ function validaMac(mac) {
 };
 
 function seletorCloud9(mac, modo) {
-    //Retorna a URL do canal do cloud9 escolhido
+    //Retorna a URL do canal do Classic Receiver escolhida
     if (modo === "all_logs") {
         modo = urlBase + "/log/";
     } else if (modo === "all_meter") {
@@ -56,7 +56,7 @@ function pegadados() {
         var macValido = validaMac(item);
         if (!macValido) { return };
 
-        // Retornando a URL do Cloud9
+        // Retornando a URL do Classic Receiver
         var endereco = seletorCloud9(macValido, modo);
         if (!endereco) { return };
     };
