@@ -1,3 +1,8 @@
+## **ATUALIZAÇÃO v0.32**
+
+- Atualização para o novo domínio: agora o Cloud9 passa para o Classic Receiver
+- Atualizações nos arquivos onde havia referência para Cloud9 por Classic Receiver
+
 ## **ATUALIZAÇÃO v0.31**
 
 - Atualização do Readme
