@@ -7,19 +7,17 @@ https://classic-receiver.greenant.com.br/api/last/measurements/MAC
 
 const urlBase = "https://classic-receiver.greenant.com.br"
 
-function validaMac(mac) {
+function validaMac(testeMac) {
     //Valida o endereço MAC
-    mac = mac.toUpperCase().trim();
-    if (mac.length != 12) {
+    testeMac = testeMac.toUpperCase().trim();
+    if (testeMac.length != 12) {
         console.error("erro de tamanho");
-        window.open("error.html");
         return false;
-    } else if (!mac.match(/([A-F0-9]{12})/)) {
+    } else if (!testeMac.match(/([A-F0-9]{12})/)) {
         console.error("erro de simbolo");
-        window.open("error.html");
         return false;
     } else {
-        return mac;
+        return testeMac;
     };
 };
 
@@ -34,31 +32,36 @@ function seletorCloud9(mac, modo) {
     } else if (modo === "last_meter") {
         modo = urlBase + "/api/last/measurements/";
     } else {
-        console.error("erro de seleção");
-        window.open("error.html");
+        console.error("Nenhum modo selecionado")
         return false;
     };
     endereco = modo + mac;
-    window.open(endereco);
     return endereco;
 };
 
-function pegadados() {
-    var formDados = new FormData(document.querySelector('form'));
-    var modo = formDados.get('selector');
-    var mac = formDados.get('mac_address');
-
-    // separa a lista de MACs
-    var listaDeMacs = mac.split(',')
+function pegadados(rota) {
+    var listaDeMacs = document.querySelector('#cloud9 #mac_address').value.split(',');
 
     for (const item of listaDeMacs) {
         //verifica se o MAC é válido
         var macValido = validaMac(item);
-        if (!macValido) { return };
+        if (!macValido) { 
+            console.warn(`MAC inválido ignorado: ${item}`);
+            window.open("error.html")
+            continue // Usa 'continue' para não cancelar os próximos MACs da lista
+        };
 
         // Retornando a URL do Classic Receiver
-        var endereco = seletorCloud9(macValido, modo);
-        if (!endereco) { return };
+        var endereco = seletorCloud9(macValido, rota);
+        console.log(endereco);
+        if (!endereco) { 
+            console.warn("erro de seleção");
+            window.open("error.html");
+            continue
+        };
+        
+        // Finalmente abre a página selecionada com o MAC
+        window.open(endereco, '_blank');
     };
 };
 

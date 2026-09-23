@@ -1,3 +1,11 @@
+## **ATUALIZAÇÃO v0.4**
+
+- Modificado o formulário de *radio buttons* para botões simples, economizando em 1 clique o uso da ferramenta
+- Refatoração do código javascript para melhor escopo das funções e ajustes necessários para o modelo de botões
+- Melhoria geral do código javascript visando um código mais limpo e bem estruturado
+- Criada folha de estilos para aplicação de tema semelhante ao Windows XP (Luna)
+- Adicionado espaço para inserção de logos no topo direito da página
+
 ## **ATUALIZAÇÃO v0.32**
 
 - Atualização para o novo domínio: agora o Cloud9 passa para o Classic Receiver
@@ -28,6 +36,6 @@
 - Separadas em funções distintas a validação do MAC e a criação da URL do Cloud9
 - Agora a função de validação de MAC faz a remoção de espaços em branco antes e depois do MAC, não retornando erro para essa condição.
 
-## **VERSÃO INICIAL v 0.1**
+## **VERSÃO INICIAL v0.1**
 
 - Criada a primeira versão do projeto.

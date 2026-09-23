@@ -1,0 +1,175 @@
+/* --- ESTILO BASE WINDOWS XP (LUNA DIALOG) --- */
+html {
+    font-size: 14px; 
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eee9ca; /* Bege padrão das janelas/diálogos do XP ECE9D8*/
+    font-family: Tahoma, "Segoe UI", Geneva, Verdana, sans-serif;
+    color: #000000;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudo-principal {
+    flex: 1;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.header-container h1 {
+    margin: 0;
+    color: #003399;
+}
+
+/* Área de Logos no Canto Superior Direito */
+.logos-container {
+    display: flex;
+    gap: 10px;
+}
+
+.logo-placeholder {
+    width: 120px;
+    height: 45px;
+    border: 1px dashed #7F9DB9;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #808080;
+}
+
+.logo-placeholder img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Títulos de Seção */
+h1, h2 {
+    font-weight: bold;
+    /*  color: #003399; /* Azul clássico dos títulos do XP */
+    margin-top: 15px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #D4D0C8;
+    padding-bottom: 3px;
+}
+
+h1 {
+    color: #003399
+}
+
+h2 {
+    color: #003fbe 
+}
+
+p {
+    line-height: 1.4;
+    margin: 6px 0;
+}
+
+/* Linha divisória fina */
+hr {
+    border: none;
+    border-top: 1px solid #ACA899;
+    border-bottom: 1px solid #FFFFFF;
+    margin: 15px 0;
+}
+
+/* --- CAIXAS DE TEXTO (INPUTS) --- */
+input[type="text"] {
+    font-family: Tahoma, sans-serif;
+    border: 1px solid #7F9DB9; /* Borda nativa do XP */
+    padding: 3px 5px;
+    background-color: #FFFFFF;
+    outline: none;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+    border-color: #1C5180;
+}
+
+/* --- BOTÕES ESTILO LUNA --- */
+input[type="button"],
+input[type="reset"],
+button {
+    font-family: Tahoma, sans-serif;
+    color: #000000;
+    background: linear-gradient(180deg, 
+    #FFFFFF 0%, 
+    #F0F0EA 40%, 
+    #E3E3DB 50%, 
+    #ECE9D8 100%);
+    border: 1px solid #003C74;
+    border-radius: 3px;
+    padding: 3px 12px;
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 #FFFFFF, inset 0 -1px 0 #D0CEBF;
+    outline: none;
+    min-height: 23px;
+}
+
+/* Efeito Hover (Brilho Amarelado do XP) */
+input[type="button"]:hover,
+input[type="reset"]:hover,
+button:hover {
+    background: linear-gradient(180deg, 
+    #FFFDF0 0%, 
+    #FFECA7 45%, 
+    #F8D053 50%, 
+    #FEE388 100%);
+    border-color: #E59700;
+    box-shadow: inset 0 1px 0 #FFFFFF, 0 0 3px #FFC73B;
+}
+
+/* Efeito ao Clicar (Pressionado) */
+input[type="button"]:active,
+input[type="reset"]:active,
+button:active {
+    background: linear-gradient(180deg, 
+    #CD8A00 0%, 
+    #E69600 20%, 
+    #F3A000 100%);
+    border-color: #003C74;
+    padding: 4px 11px 2px 13px;
+}
+
+/* --- GRID DE BOTÕES --- */
+.grid-botoes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    max-width: 320px;
+    margin-top: 10px;
+}
+
+.grid-botoes input[type="button"] {
+    width: 100%;
+}
+
+.campo-mac {
+    margin-bottom: 10px;
+}
+
+/* --- RODAPÉ --- */
+footer {
+    margin-top: 30px;
+    padding-top: 8px;
+    border-top: 1px solid #D4D0C8;
+    text-align: center;
+    color: #555555;
+    font-size: 10px;
+}

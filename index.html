@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
-
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,51 +8,70 @@
   <link rel="stylesheet" href="styles.css">
   <script src="script.js"></script>
 </head>
-
 <body>
-  <h1>GA Toolbox</h1>
+  <div class="conteudo-principal">
+    <header class="header-container">
+      <h1>GA Toolbox</h1>
+      <div class="logos-container">
+        <div class="logo-placeholder">
+          <!-- <img src="logo1.png" alt="Logo 1"> -->
+          <span>Logo 1</span>
+        </div>
+        <div class="logo-placeholder">
+          <!-- <img src="logo2.png" alt="Logo 2"> -->
+          <span>Logo 2</span>
+        </div>
+      </div>
+    </header>
 
-  <h2>Seletor Classic Receiver</h2>
-  <p>O Cloud9 foi migrado e <strong>agora se chama Classic Receiver!</strong></p>
-  <p>Selecione a opção do Classic Receiver que deseja utilizar e insira o MAC.
-    <br>Também é possível enviar uma lista de MACs separados somente por vírgula.
-    <br><strong>ATENÇÃO:</strong> é necessário liberar os pop-ups nesta página para
-    que a abertura de uma lista de MACs ocorra normalmente.
-  </p>
+    <h2>Seletor Classic Receiver</h2>
+    <p><strong>O Cloud9 foi migrado e agora se chama Classic Receiver!</strong></p>
+    <p>
+      Selecione a opção do Classic Receiver que deseja utilizar e insira o MAC.<br>
+      Também é possível enviar uma lista de MACs separados somente por vírgula.<br>
+      <strong>ATENÇÃO:</strong> é necessário liberar os pop-ups nesta página para que a abertura de uma lista de MACs ocorra normalmente.
+    </p>
 
-  <form>
-    <input type="radio" id="all_logs" name="selector" value="all_logs">
-    <label for="all_logs">/log/</label><br>
+    <!-- <p>98F4AB808A04, 0CDC7EDDE6A0</p> -->
 
-    <input type="radio" id="all_meter" name="selector" value="all_meter">
-    <label for="all_meter">/meter/</label><br>
+    <form id="cloud9">
+      <div class="campo-mac">
+        <label for="mac_address"><strong>MAC address:</strong></label>
+        <input type="text" id="mac_address" placeholder="AABBCCDDEEFF" pattern="[A-F0-9]{12}">
+        <input type="reset">
+      </div>
 
-    <input type="radio" id="last_logs" name="selector" value="last_logs">
-    <label for="last_logs">/last/logs/</label><br>
+      <div class="grid-botoes">
+        <input type="button" id="all_logs" value="/log/" onclick="pegadados('all_logs')">
+        <input type="button" id="last_logs" value="/last/logs/" onclick="pegadados('last_logs')">
+        <input type="button" id="all_meter" value="/meter/" onclick="pegadados('all_meter')">
+        <input type="button" id="last_meter" value="/last/meansuraments/" onclick="pegadados('last_meter')">
+      </div>
+    </form>
 
-    <input type="radio" id="last_meter" name="selector" value="last_meter">
-    <label for="last_meter">/last/meansuraments/</label><br><br>
+    <hr>
 
-    <label for="mac_address"><strong>MAC address:</strong></label>
-    <input type="text" id="mac_address" name="mac_address" placeholder="AABBCCDDEEFF" pattern="[A-F0-9]{12}"><br><br>
+    <h2>Conversor de Caixa Alta para Caixa Baixa</h2>
+    <p>Converte o endereço MAC de caixa alta para caixa baixa, que é o padrão necessário para ser utilizado no Park Management.</p>
+    
+    <form id="conversorCaixa">
+      <div class="caixaBaixa">
+        <label for="mac_address"><strong>MAC address:</strong></label>
+        <input type="text" id="mac_caixa_alta" name="mac_caixa_alta" placeholder="AABBCCDDEEFF" pattern="[A-F0-9]{12}">
+        <input type="button" value="Converter!" onclick="caixaBaixa()">
+        <input type="reset">
+      </div>
 
-    <input type="button" value="Enviar!" onclick="pegadados()">
-  </form>
+      <p>
+        <strong>MAC em caixa baixa:</strong>
+        <span id="caixa_baixa"></span>
+      </p>
+    </form>
+  </div>
 
-  <hr>
-
-  <h2>Conversor de Caixa Alta</h2>
-  <p>Converte o endereço MAC de caixa alta para caixa baixa, que é o padrão necessário para ser utilizado no Park
-    Management</p>
-
-  <label for="mac_address"><strong>MAC address:</strong></label>
-  <input type="text" id="mac_caixa_alta" name="mac_caixa_alta" placeholder="AABBCCDDEEFF"
-    pattern="[A-F0-9]{12}"><br><br>
-
-  <strong>MAC em caixa baixa:</strong>
-  <span id="caixa_baixa"></span>
-
-  <p><input type="button" value="Converter!" onclick="caixaBaixa()"></p>
+  <footer>
+    <p>Desenvolvido por <strong>Rafael Amico @ DXT Engenharia e Tecnologia</strong> &copy; 2026</p>
+  </footer>
 </body>
 
 </html>
